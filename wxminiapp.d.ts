@@ -1150,6 +1150,31 @@ declare namespace wx {
          * 客户端平台
          */
 		platform: string;
+
+		/**
+		 * 用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位 px。 >= 1.5.0
+		 */
+		fontSizeSetting: number;
+
+		/**
+		 * 客户端基础库版本 >= 1.1.0
+		 */
+		SDKVersion: string;
+
+		/**
+		 * 性能等级，-2 或 0：该设备无法运行小游戏，-1：性能未知，>=1 设备性能值，该值越高，设备性能越好(目前设备最高不到50) >= 1.8.0
+		 */
+		benchmarkLevel: number;
+
+		/**
+		 * 电量，范围 1 - 100  >= 1.9.0
+		 */
+		battery: number;
+
+		/**
+		 * wifi 信号强度，范围 0 - 4 >= 1.9.0
+		 */
+		wifiSignal: number;
 	}
 
 	export interface GetSystemInfoOptions extends BaseOptions {
@@ -2980,7 +3005,7 @@ declare namespace wx {
 
 	export function openCustomerServiceConversation({ sessionFrom: string });
 
-	export function requestMidasPayment({})
+	export function requestMidasPayment({ })
 }
 
 declare let sharedCanvas: Canvas;
